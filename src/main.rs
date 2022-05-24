@@ -1,19 +1,18 @@
-use cachesim::{CacheDevice, OracleCache, general_cache_behavior::AccessResult::*};
+use cachesim::{CacheDevice, OracleCache, general_cache_behavior::*, general_cache_behavior::HitOrMiss::*};
 
 fn main() {
-    let mut cache = CacheDevice::new(OracleCache::new());
+    let mut cache = CacheDevice::new(OracleCache::new(), "F:\\Programs\\Programs-Rust\\cachesim_example\\oracle.txt");
 
-    println!("cache type: {}", cache.get_type());
-
-    for i in 0..100 {
-        println!("accessing {:06X}, results in {}", i, 
-        match cache.access(i) {
+    for i in 0..10 {
+        let AccessResult(r, l) = cache.access(i);
+        println!("accessing {:06X}, results in {}, latency is {}", i, 
+        match r {
             Hit => "hit",
             Miss => "miss",
-        });
+        }, l);
         
     }
 
-    let (h, m) = cache.get_result();
-    println!("hits: {}, misses: {}", h, m);
+    let (h, m, l) = cache.get_result();
+    println!("hits: {}, misses: {}, latency: {}", h, m, l);
 }
