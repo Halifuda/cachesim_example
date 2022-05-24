@@ -1,7 +1,11 @@
 use cachesim::{CacheDevice, DefaultCache, general_cache_behavior::*, general_cache_behavior::HitOrMiss::*};
 
+mod worst_cache;
+use worst_cache::*;
+
 fn main() {
-    let mut cache = CacheDevice::new(DefaultCache::new(), "F:\\Programs\\Programs-Rust\\cachesim_example\\default.txt");
+    // let mut cache = CacheDevice::new(DefaultCache::new(), "F:\\Programs\\Programs-Rust\\cachesim_example\\default.txt");
+    let mut cache = CacheDevice::new(WCache::new(), "");
 
     println!("cache size:{}B", cache.get_size());
 
