@@ -4,7 +4,7 @@ mod worst_cache;
 use worst_cache::*;
 
 fn main() {
-    // let mut cache = CacheDevice::new(DefaultCache::new(), "F:\\Programs\\Programs-Rust\\cachesim_example\\default.txt");
+    // let mut cache = CacheDevice::new(DefaultCache::new(), "Path\\Need\\To\\Be\\Modified\\default.txt");
     let mut cache = CacheDevice::new(WCache::new(), "");
 
     println!("cache size:{}B", cache.get_size());
