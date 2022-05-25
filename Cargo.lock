@@ -5,6 +5,8 @@ version = 3
 [[package]]
 name = "cachesim"
 version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "ca7709f94d0fb5740737ce8296a742d4958aaf8e7f90e0aec88a0bffb9ad8dbe"
 
 [[package]]
 name = "cachesim_example"

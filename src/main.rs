@@ -1,3 +1,7 @@
+/*!
+ * This is an example to use `cachesim` in a local Rust project.
+ */
+
 use cachesim::{CacheDevice, DefaultCache, general_cache_behavior::*, general_cache_behavior::HitOrMiss::*};
 
 mod worst_cache;
